@@ -4,6 +4,10 @@ and has a node server to communicate with the help of relative URL.
 Speciality of this react application is that it demonstrates use of React Hooks in functional components. 
 Gotta say they are pretty handy.
 
+# Steps performed manually (for CI till CD on Docker) to get some help writing API:
+After successfully completing your project (i.e. when its ready to be deployed), 
+1.  Write your Jenkinsfile. 
+- I am copying this Jenkinsfile from here: ["Jenkins ReactJS+Node App Pipeline Job for CI"](https://www.jenkins.io/doc/tutorials/build-a-node-js-and-react-app-with-npm/)
 
 ## Reference URLs:
 
