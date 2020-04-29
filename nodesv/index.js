@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(bodyParser.json())
+app.use(cors())
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
@@ -10,11 +13,13 @@ app.get('/', function(req, res) {
 
 app.post('/takeData', (req,res) => {
     try {   
-        const msg = req.msg;
+        const msg = req.body.msg;
         console.log("client msg was: ", msg);
-        req.status(200).send(`${msg}-${Math.random()}`);
+        res.status(200).send(`${msg}-${Math.random()}`);
     }catch(e) {
         res.status(400).send(e);
     }
 })
-app.listen(5000);
+app.listen(5000, () => {
+    console.log("listen on 5K port")
+});
