@@ -7,5 +7,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 nvm --version
+
+# Install node using nvm:
+nvm install 14
+# Check if it's installed or not:
 node --version
 npm --version
