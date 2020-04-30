@@ -13,3 +13,5 @@ nvm install 14
 # Check if it's installed or not:
 node --version
 npm --version
+
+npm run build
