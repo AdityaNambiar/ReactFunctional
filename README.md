@@ -18,6 +18,12 @@ After successfully completing your project (i.e. when its ready to be deployed),
     f. Expose the appropriate port.
     g. Specify 'node index.js' to start the web server in docker containers. 
 - For this project particularly, I am going to host my node API server on a container as well. So write a Dockerfile for that. 
+3. How are you manually setting up a Jenkins Pipeline job?:
+a. Under "Pipeline" section, choose Definition to be "Pipeline script from SCM".
+b. SCM field's value should be 'Git'.
+c. Give Repository URL as the local filesystem project directory (path to working directory on filesystem)
+
+  
 ## Reference URLs:
   
 ["Back-End Integration" section](https://create-react-app.dev/docs/proxying-api-requests-in-development)
