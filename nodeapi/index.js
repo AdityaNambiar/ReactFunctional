@@ -1,15 +1,11 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const port = 5000;
+
 app.use(bodyParser.json())
 app.use(cors())
-
-app.use(express.static(path.join(__dirname,'..', 'build')));
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname,'..', 'build'));
-});
 
 app.post('/takeData', (req,res) => {
     try {   
@@ -20,6 +16,6 @@ app.post('/takeData', (req,res) => {
         res.status(400).send(e);
     }
 })
-app.listen(5000, () => {
-    console.log("listen on 5K port")
+app.listen(port, () => {
+    console.log("listen on "+port+" port")
 });
