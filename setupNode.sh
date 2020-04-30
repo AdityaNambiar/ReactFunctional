@@ -13,5 +13,7 @@ nvm install 14
 # Check if it's installed or not:
 node --version
 npm --version
-
+# Setup the node_modules directory:
+npm i
+# Start production build:
 npm run build
