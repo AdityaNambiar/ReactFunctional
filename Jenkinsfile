@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './setupNode.sh'
-                sh 'ls -al'
+                sh './setupNode.sh && npm run build'
             }
         }
     }
