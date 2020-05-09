@@ -7,12 +7,11 @@ Gotta say they are pretty handy.
 # Steps performed manually (for CI till CD on Docker) to get some help writing API:  
 After successfully completing your project (i.e. when its ready to be deployed), 
 1. Write your Jenkinsfile. 
-- Writing only the stage for building. It could potentiatlly stand as example for showing how (in our major project) it can be supplied by developers for automating builds for CI.
 2. Write the Dockerfile 
 - Instructions to be written for this Dockerfile:
     a. Use node-alpine image (use a specific version image).
     b. Take the 'build/' from the project's working directory.
-    c. Take the 'package.json' from project's working directory. (*make sure only required devDependencies are present in its list* )
+    c. Take the 'package.json' from project's working directory. (*make sure only required dependencies are present in its list* )
     d. Take the hosting code which uses Express in Node, from the 'webserver' folder.
     e. Perform 'npm i' for setting up 'node_modules'
     f. Expose the appropriate port.

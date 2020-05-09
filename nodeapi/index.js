@@ -16,6 +16,20 @@ app.post('/takeData', (req,res) => {
         res.status(400).send(e);
     }
 })
+
+app.get('/hello', function(req, res) {
+    res.status(200).send("HELLO FRIEND");
+})
+
+app.post('/newRequiredRouteAfterDeployment', (req, res) => {
+    try {
+        const frontendmsg  = req.body.newdata;     
+        res.status(200).send(`${frontendmsg} \n Date right now is: ${new Date(Date.now()).toLocaleTimeString('en-US', {hour12: true})}`)
+    } catch (err) {
+        res.status(400).send(e);
+    }
+})
+
 app.listen(port, () => {
     console.log("listen on "+port+" port")
 });

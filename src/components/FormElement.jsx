@@ -1,10 +1,32 @@
 import React, { useState, useEffect }from 'react';
 
 export default () => {
-    const [data, updateData] = useState(''); 
+    const [data, updateData] = useState("Default value of data state variable."); 
     useEffect(() => {
-            document.getElementById('output').innerText = "Default value of data state variable.";
-    },[])
+            document.getElementById('output').innerText = data;
+    },[data])
+    useEffect( () => {
+        fetch('/hello', {
+            method: 'GET'
+        })
+        .then(resp => resp.text())
+        .then( resp => {
+            updateData(resp);
+        })
+    }, [])
+    useEffect( () => {
+        fetch('/newRequiredRouteAfterDeployment', {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify({ "newdata": "Hey client this is your newdata from our backend API"})
+        })
+        .then(resp => resp.text())
+        .then( resp => {
+            updateData(resp);
+        })
+    }, [])
     function sendData() {
         
         console.log("data: ",data);
