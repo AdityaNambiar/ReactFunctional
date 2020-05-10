@@ -1,0 +1,12 @@
+FROM node:14.0.0-alpine3.11
+
+WORKDIR /build
+# Copy working directory of react app
+COPY . .
+# Install all node modules
+RUN node -v
+RUN npm i
+# Starting building
+RUN npm run build
+
+CMD [ "tar", "-cvzf", "build.tar", "build"]

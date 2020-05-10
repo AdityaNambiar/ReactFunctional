@@ -1,0 +1,21 @@
+# 27MB baseimage - alpine FTW
+FROM node:14.0.0-alpine3.11 
+# After picking a base image, set the working directory. This is where the react app will reside.
+WORKDIR app
+# Copy the index.js & package.json file from the same directory where this Dockerfile resides at.
+
+# Copied from - https://mherman.org/blog/dockerizing-a-react-app/
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+RUN npm install react-scripts@3.4.1 -g 
+
+# add app - I need to add all the files (except node_modules - which is ignored by dockerignore and not sent to this image by docker daemon)
+COPY . ./
+
+# start app
+CMD ["npm", "run", "test"]
