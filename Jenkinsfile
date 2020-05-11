@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label: 'master' }}
+    agent { label: 'master' }
     environment {
         CI = 'true'
     }
