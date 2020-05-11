@@ -1,28 +1,29 @@
-pipeline{
-    agent{
-        label "node"
+pipeline {
+    agent any
+    environment {
+        CI = 'true'
     }
     stages {
-        stage('Checkout') {
-            checkout scm
+        stage ('Checkout') {
+            steps {
+                checkout scm
+            }     
         }
-        stage('Environment') {
-            sh 'docker -v'
+        stage ('Environment') {
+            steps {
+                sh 'node -v'
+                sh 'npm i'
+            }
         }
-        // stage('Build Docker test'){
-        //     sh 'docker build -t react-test -f Dockerfile.test --no-cache . '
-        // }
-        // stage('Docker test'){
-        //     sh 'docker run --rm react-test'
-        // }
-        // stage('Clean Docker test'){
-        //     sh 'docker rmi react-test'
-        // }
-        stage('Deploy'){
-            sh 'docker build -t react-app --no-cache .'
-            sh 'docker tag react-app localhost:5000/react-app'
-            sh 'docker push localhost:5000/react-app'
-            sh 'docker rmi -f react-app localhost:5000/react-app'
+        stage('Test') {
+            steps {
+                sh 'npm run test'
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'npm run build'
+            }
         }
     }
 }

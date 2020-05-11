@@ -10,20 +10,10 @@ const port = 8080;
 app.use(bodyParser.json())
 app.use(cors())
 
-app.use(express.static(path.join(__dirname,'..', 'build')));
+app.use(express.static(path.join(__dirname,'..','build')));
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname,'..', 'build'));
+  res.sendFile(path.join(__dirname,'..','build'));
 });
-// app.use(
-//   "/hello",
-//   createProxyMiddleware(
-//     {
-//       target: 'http://localhost:5000/',
-//       changeOrigin: true,
-//       logLevel: "debug"
-//     }
-//   )
-// )
 
 /**
  * Below proxy middleware has been attached so that

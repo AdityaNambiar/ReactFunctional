@@ -9,4 +9,4 @@ RUN npm i
 # Starting building
 RUN npm run build
 
-CMD [ "tar", "-cvzf", "build.tar", "build"]
+CMD [ "tar", "-cvzf", "-", "build"]
