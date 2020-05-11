@@ -1,14 +1,9 @@
 pipeline {
-    agent any
+    agent { node { label: 'master' }}
     environment {
         CI = 'true'
     }
     stages {
-        stage ('Checkout') {
-            steps {
-                checkout scm
-            }     
-        }
         stage ('Environment') {
             steps {
                 sh 'node -v'
