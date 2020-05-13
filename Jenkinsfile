@@ -1,7 +1,8 @@
 pipeline {
     agent {
 	node {
-        customWorkspace '.'
+	        customWorkspace '.'
+	}
     }
     environment {
         CI = 'true'
