@@ -8,7 +8,7 @@ pipeline {
     environment {
         CI = 'true'
     }
-    tools {nodejs "node"}
+    tools {nodejs "node14"}
     stages {
         stage ('Environment') {
             steps {
