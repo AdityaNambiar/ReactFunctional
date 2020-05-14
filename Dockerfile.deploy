@@ -3,7 +3,7 @@ FROM node:14.0.0-alpine3.11
 # After picking a base image, set the working directory.
 WORKDIR /webserver
 # Copy the index.js & package.json file from the same directory where this Dockerfile resides at.
-COPY build ./build
+COPY build build
 COPY webserver .
 # Set up node_modules
 RUN node -v
