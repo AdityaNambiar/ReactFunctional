@@ -29,8 +29,8 @@ pipeline {
 		}
 		post { 
 		  success { 
-		    sh 'docker tag projName:0.1 localhost:7009/projName:0.1'
-		    sh 'docker push localhost:7009/projName:0.1'
+		    sh 'docker tag projName:0.1 devopschain/projName:0.1'
+		    sh 'docker push devopschain/projName:0.1'
 		  }
 	    	}
 	}
