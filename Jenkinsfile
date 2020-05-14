@@ -29,8 +29,8 @@ pipeline {
 		}
 		post { 
 		  success { 
-		    sh 'docker tag reactapp:0.1 localhost:7009/reactapp:0.1'
-		    sh 'docker push localhost:7009/reactapp:0.1'
+		    sh 'docker tag reactapp:0.1 192.168.1.101:7009/reactapp:0.1'
+		    sh 'docker push 192.168.1.101:7009/reactapp:0.1'
 		  }
 	    	}
 	}
