@@ -25,11 +25,12 @@ pipeline {
         }
 	stage ('Deploy to Docker Hub'){
 		steps {
-			sh 'docker build -t reactapp:0.1 -f Dockerfile .'
+			sh 'docker build -t reactapp:0.1 -f Dockerfile.deploy .'
 		}
 		post { 
 		success { 
 		    sh 'docker tag projName:0.1 localhost:7009/projName:0.1'
+		    sh 'docker push localhost:7009/projName:0.1
 		}
 	    }
 	}
