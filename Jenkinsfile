@@ -23,13 +23,12 @@ pipeline {
                 sh 'npm run build'
             }
         }
-	stage ('Deploy to Docker Hub'){
+	stage ('Deploy to Private Docker Registry'){
 		steps {
-			sh 'docker build -t reactapp:0.1 -f Dockerfile.deploy .'
+			sh 'docker build -t 192.168.1.101:7009/reactapp:0.1 -f Dockerfile.deploy .'
 		}
 		post { 
 		  success { 
-		    sh 'docker tag reactapp:0.1 192.168.1.101:7009/reactapp:0.1'
 		    sh 'docker push 192.168.1.101:7009/reactapp:0.1'
 		  }
 	    	}
