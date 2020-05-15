@@ -46,7 +46,11 @@ export default () => {
         })
     }
     return(
-        <div>
+        <div style={{
+            borderColor: 'red',
+            borderSize: '1em',
+            borderStyle: 'groove'
+        }}>
             <form>
                 <input type="text" name="txt1" onChange={(e)=>updateData(e.target.value)}/>
                 <input type="button" name="btn1" value="Submit btn" onClick={sendData}/>
