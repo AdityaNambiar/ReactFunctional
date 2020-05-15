@@ -8,6 +8,7 @@ COPY webserver .
 # Set up node_modules
 RUN node -v
 RUN rm -rf node_modules 
+RUN npm cache clean --force
 RUN npm install 
 
 # Start Web server

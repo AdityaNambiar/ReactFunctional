@@ -25,7 +25,7 @@ pipeline {
         }
 	stage ('Deploy to Private Docker Registry'){
 		steps {
-			sh 'docker build -t 192.168.1.101:7009/reactapp:0.2 -f Dockerfile .'
+			sh 'docker build -t 192.168.1.101:7009/reactapp:0.2 –no-cache -f Dockerfile .'
 		}
 		post { 
 		  success { 
