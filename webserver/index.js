@@ -4,6 +4,7 @@ const path = require('path');
 const { createProxyMiddleware } = require('http-proxy-middleware'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const IP = require('ip');
 const app = express();
 const port = 8080;
 
@@ -24,7 +25,7 @@ app.use(
   "/",
   createProxyMiddleware(
     {
-      target: 'http://localhost:32770/',
+      target: `http://${IP}:32770/`,
       changeOrigin: true,
       logLevel: "debug",
       onProxyReq: (proxyReq, req, res) => {
