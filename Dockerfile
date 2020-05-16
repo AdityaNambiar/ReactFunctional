@@ -10,4 +10,4 @@ RUN npm i
 RUN node -v
 
 EXPOSE 5000
-CMD ["/usr/local/bin/node", "index.js"]
+ENTRYPOINT ["/usr/local/bin/node", "index.js"]
