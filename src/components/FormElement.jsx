@@ -47,7 +47,7 @@ export default () => {
     }
     return(
         <div style={{
-            borderColor: 'red',
+            borderColor: 'green',
             borderSize: '1em',
             borderStyle: 'groove'
         }}>
