@@ -25,7 +25,7 @@ app.use(
   "/",
   createProxyMiddleware(
     {
-      target: `http://${IP}:32770/`,
+      target: `http://${IP}:32769/`,
       changeOrigin: true,
       logLevel: "debug",
       onProxyReq: (proxyReq, req, res) => {
