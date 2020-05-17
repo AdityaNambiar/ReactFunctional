@@ -4,7 +4,7 @@ const path = require('path');
 const { createProxyMiddleware } = require('http-proxy-middleware'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const IP = require('ip').address();
+//const IP = require('ip').address();
 const app = express();
 const port = 8080;
 
@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname,'build')));
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname,'build'));
 });
-console.log(IP);
+//console.log(IP);
 /**
  * Below proxy middleware has been attached so that
  * any routes that hit this webserver will be parsed by
@@ -25,7 +25,7 @@ app.use(
   "/",
   createProxyMiddleware(
     {
-      target: `http://${IP}:32769/`,
+      target: `http://192.168.1.102:32769/`,
       changeOrigin: true,
       logLevel: "debug",
       onProxyReq: (proxyReq, req, res) => {
