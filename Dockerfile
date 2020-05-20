@@ -8,8 +8,9 @@ COPY webserver .
 # Set up node_modules
 RUN node -v
 RUN rm -rf node_modules 
-RUN npm cache clean --force
-RUN npm install 
+#RUN npm cache clean --force
+RUN yarn config set ignore-engines true
+RUN yarn install 
 
 # Start Web server
 EXPOSE 8080

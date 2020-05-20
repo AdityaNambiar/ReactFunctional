@@ -1,4 +1,4 @@
-A ReactJS web application that is built to be production ready (currently learning & working to make changes) 
+A Angular web application that is built to be production ready (currently learning & working to make changes) 
 and has a node server to communicate with the help of relative URL. 
 
 Speciality of this react application is that it demonstrates use of React Hooks in functional components. 
@@ -15,7 +15,7 @@ After successfully completing your project (i.e. when its ready to be deployed),
     d. Take the hosting code which uses Express in Node, from the 'webserver' folder.
     e. Perform 'npm i' for setting up 'node_modules'
     f. Expose the appropriate port.
-    g. Specify 'node index.js' to start the web server in docker containers. 
+   g. Specify 'node index.js' to start the web server in docker containers. 
 - For this project particularly, I am going to host my node API server on a container as well. So write a Dockerfile for that. 
 3. How are you manually setting up a Jenkins Pipeline job?:
 a. Under "Pipeline" section, choose Definition to be "Pipeline script from SCM".
@@ -30,7 +30,7 @@ c. Give Repository URL as the local filesystem project directory (path to workin
 [How to get "create-react-app" to work with your API](https://www.newline.co/fullstack-react/articles/using-create-react-app-with-a-server/)
 - Understand how to utilize Webpack bundler to create 'reverse proxy' for avoiding "CORS" issues on stringent secure browsers like Chrome and also help you to avoid port mapping issues and dependency occuring due to hard-coding ports.
   
-[What Is A Reverse Proxy? | Proxy Servers Explained](https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/)
+[What Is A Reverse Proy? | Proxy Servers Explained](https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/)
   
 [GitHub Repository: mars/heroku-cra-node](https://github.com/mars/heroku-cra-node)
 - A sample GitHub repository that can serve as an example for understanding how these actually work. This linked repository is also the reason why I wanted to use ReactHooks and functional components. 

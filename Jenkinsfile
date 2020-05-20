@@ -10,7 +10,8 @@ pipeline {
         stage ('Environment') {
             steps {
                 sh 'node -v'
-                sh 'npm i'
+		sh 'yarn config set ignore-engines true'
+                sh 'yarn install'
             }
         }
         stage('Test') {
@@ -25,11 +26,11 @@ pipeline {
         }
 	stage ('Deploy to Private Docker Registry'){
 		steps {
-			sh 'docker build -t 192.168.1.102:7009/reactapp-master:0.2 --no-cache -f Dockerfile .'
+			sh 'docker build -t 192.168.43.160:7009/movielibrary:movielibrary-frontend -f Dockerfile .'
 		}
 		post { 
 		  success { 
-		    sh 'docker push 192.168.1.102:7009/reactapp-master:0.2'
+		    sh 'docker push 192.168.43.160:7009/movielibrary:movielibrary-frontend'
 		  }
 	    	}
 	}

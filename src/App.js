@@ -1,11 +1,21 @@
 import React from 'react';
-import FormElement from './components/FormElement';
+import logo from "./logo.svg"
+import FormElement from "./components/FormElement"
 import './App.css';
 
-function App() {
+function App() { 
   return (
     <div className="App">
-      <FormElement />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          <h1>This is a Movielibrary App  hosted by Devopschain</h1>
+          <div>
+            <FormElement/>
+          </div>
+        </p>
     </div>
   );
 }

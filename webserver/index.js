@@ -25,11 +25,11 @@ app.use(
   "/",
   createProxyMiddleware(
     {
-      target: `http://192.168.1.102:32769/`,
+      target: `http://192.168.43.160:32781`,
       changeOrigin: true,
       logLevel: "debug",
       onProxyReq: (proxyReq, req, res) => {
-        if (req.body) {
+        if (req.bo) {
           let bodyData = JSON.stringify(req.body);
           // incase if content-type is application/x-www-form-urlencoded -> we need to change to application/json
           proxyReq.setHeader('content-type','application/json');
