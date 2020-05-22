@@ -6,15 +6,13 @@ export default () => {
             document.getElementById('output').innerText = data;
     },[data])
     useEffect( () => {
-        fetch('/hello', {
+        /*fetch('/hello', {
             method: 'GET'
         })
         .then(resp => resp.text())
         .then( resp => {
             updateData(resp);
-        })
-    }, [])
-    useEffect( () => {
+        })*/
         fetch('/newRequiredRouteAfterDeployment', {
             method: 'POST',
             headers: {
